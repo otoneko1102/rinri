@@ -1,0 +1,140 @@
+RINRI LICENSE
+Version 1.0, 2026
+
+"Rinri" means "ethics" in Japanese.
+
+─────────────────────────────────────────────────────────────────────────────
+
+PREAMBLE
+
+The RINRI License exists because someone had to say it.
+
+Software is built by humans. Humans are, on their best days, ethical actors
+who weigh competing interests, acknowledge uncertainty, and treat others with
+dignity. On their worst days, humans weaponize the concept of ethics to win
+arguments on the internet.
+
+This license is dedicated to everyone who has ever cited "engineering ethics"
+not to improve the world, but to position themselves as morally superior to a
+stranger on a forum. You know who you are. So does everyone else.
+
+True engineering ethics — the kind taught in universities, codified by IEEE,
+ACM, and IPA, and practiced by engineers who actually care — is about serving
+the public good, being honest about limitations, protecting safety, and taking
+responsibility for harm. It is a discipline. It is hard. It is not a debate
+tactic.
+
+By using, distributing, or referencing this software, you agree to at least
+pretend to understand the difference.
+
+─────────────────────────────────────────────────────────────────────────────
+
+TERMS AND CONDITIONS
+
+0. DEFINITIONS
+
+"The Software" refers to any work distributed under this license.
+
+"You" refers to any individual or entity exercising rights under this license.
+
+"Ethical Grandstanding" means the act of invoking engineering ethics, codes of
+conduct, or professional responsibility primarily to publicly shame, silence,
+or discredit another person rather than to address a genuine harm.
+
+"The Principles" refers to the foundational canons of engineering ethics,
+including but not limited to: holding public safety paramount, acting with
+honesty and integrity, practicing only within one's competence, and disclosing
+conflicts of interest.
+
+1. GRANT OF LICENSE
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this Software, to use, copy, modify, merge, publish, distribute, and/or
+sublicense it, subject to the following conditions.
+
+2. CONDITIONS OF USE
+
+You may use this Software provided that you:
+
+  (a) Acknowledge, at least privately, that engineering ethics is a serious
+      professional discipline and not a rhetorical weapon.
+
+  (b) Refrain from citing The Principles in bad faith — that is, invoking
+      them to attack individuals while ignoring equivalent conduct by those
+      you agree with.
+
+  (c) Accept that calling something "unethical" does not make it so, and that
+      the inverse also applies.
+
+  (d) Recognize that reasonable engineers can disagree, and that disagreement
+      is not itself an ethics violation.
+
+3. THE GOLDEN SUBROUTINE
+
+Before publicly accusing another person or their work of being unethical, you
+are strongly encouraged — though not legally required — to run the following
+internal check:
+
+  IF  (you are angry)
+  AND (you have not read the relevant code, specification, or context)
+  AND (your primary goal is to win, not to improve anything)
+  THEN
+      do NOT post.
+      close the tab.
+      drink water.
+
+4. HALL OF SHAME (HYPOTHETICAL, FOR ILLUSTRATIVE PURPOSES ONLY)
+
+The following behaviors are inconsistent with the spirit of this license and,
+for what it is worth, with every actual engineering ethics code ever written:
+
+  - Demanding someone be fired because they made a product you dislike.
+  - Citing "public safety" to describe a software library that hurt your
+    feelings.
+  - Claiming moral authority from an IEEE membership you have never read.
+  - Writing open letters signed by 200 people who also did not read the code.
+  - Any behavior that would embarrass you if your professors saw it.
+
+5. DISCLAIMER OF WARRANTIES
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF CORRECTNESS,
+WISDOM, OR MORAL AUTHORITY.
+
+THE AUTHORS DO NOT WARRANT THAT USE OF THIS SOFTWARE WILL MAKE YOU ETHICAL.
+THAT PART IS UP TO YOU.
+
+6. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY DAMAGES ARISING FROM YOUR USE
+OF THIS SOFTWARE TO JUSTIFY BEHAVIOR THAT YOU ALREADY KNEW, DEEP DOWN, WAS
+NOT GREAT.
+
+7. ATTRIBUTION
+
+This license was inspired by the gap between engineering ethics as a
+discipline and engineering ethics as performed on social media.
+
+If you redistribute this Software, retain this license. If you improve upon
+it, consider whether the improvement truly serves the public good, or whether
+you just want to look clever. Both are fine. Just be honest about which one
+it is.
+
+─────────────────────────────────────────────────────────────────────────────
+
+AFTERWORD
+
+The canons of engineering ethics, in every version and from every professional
+body, begin with the same idea: the welfare of the public comes first.
+
+Not your reputation. Not your side of the argument. The public.
+
+If you genuinely believe a piece of software causes harm, say so clearly,
+explain why, and engage with the response. That is ethics. Everything else is
+theater.
+
+Thank you for reading a license. You are already doing better than most.
+
+─────────────────────────────────────────────────────────────────────────────
+
+END OF RINRI LICENSE VERSION 1.0
