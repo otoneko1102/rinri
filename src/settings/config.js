@@ -5,3 +5,4 @@ export const TWEET_TEXT = '技術者倫理を守ろう\nhttps://gijutsusharin.li
 export const DISCORD_URL = 'https://discord.gg/upSpdDgDha';
 export const GITHUB_URL = 'https://github.com/otoneko1102/rinri';
 export const TWITTER_ACCOUNT = '@rin_pineapple';
+export const ACM_CODE_URL = 'https://www.acm.org/binaries/content/assets/code-of-ethics/se-code-jpn.pdf';

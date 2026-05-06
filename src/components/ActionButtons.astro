@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { ACM_CODE_URL } from '../settings/config.js';
 
 interface Props {
   tweetUrl: string;
@@ -19,6 +20,15 @@ const { tweetUrl, siteUrl } = Astro.props;
     >
       <Icon name="logos:google-icon" width="16" height="16" aria-hidden="true" />
       技術者倫理について学ぶ
+    </a>
+    <a
+      href={ACM_CODE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn"
+    >
+      <Icon name="lucide:file-text" width="15" height="15" aria-hidden="true" />
+      ACM ソフトウェアエンジニア倫理綱領を読む
     </a>
   </div>
   <div class="actions-row">
