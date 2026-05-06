@@ -41,8 +41,17 @@ const { title, description, url, ogImage } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <!--
+      開発者タブを開いてソースを見ることは技術者倫理に反しています！
+    -->
     <slot />
     <Footer />
+
+    <script>
+      setInterval(() => {
+        console.log("開発者タブを開いてソースを見ることは技術者倫理に反しています！");
+      }, 5000);
+    </script>
   </body>
 </html>
 
