@@ -1,4 +1,7 @@
 ---
+import Footer from '../components/Footer.astro';
+import { TWITTER_ACCOUNT } from '../settings/config.js';
+
 interface Props {
   title: string;
   description: string;
@@ -28,8 +31,8 @@ const { title, description, url, ogImage } = Astro.props;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@rin_pineapple" />
-    <meta name="twitter:creator" content="@rin_pineapple" />
+    <meta name="twitter:site" content={TWITTER_ACCOUNT} />
+    <meta name="twitter:creator" content={TWITTER_ACCOUNT} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
@@ -39,6 +42,7 @@ const { title, description, url, ogImage } = Astro.props;
   </head>
   <body>
     <slot />
+    <Footer />
   </body>
 </html>
 

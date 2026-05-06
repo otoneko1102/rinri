@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components';
+import { DISCORD_URL, GITHUB_URL } from '../settings/config.js';
+---
+
+<footer>
+  <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" aria-label="Discord">
+    <Icon name="simple-icons:discord" width="18" height="18" aria-hidden="true" />
+  </a>
+  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+    <Icon name="simple-icons:github" width="18" height="18" aria-hidden="true" />
+  </a>
+</footer>
+
+<style>
+  footer {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--btn-bg);
+    text-decoration: none;
+    transition: color 0.12s, background 0.12s, box-shadow 0.12s;
+  }
+
+  footer a:hover {
+    color: var(--fg);
+    background: var(--btn-hover);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+</style>
