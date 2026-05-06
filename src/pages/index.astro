@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ActionButtons from '../components/ActionButtons.astro';
+import BadgeSection from '../components/BadgeSection.astro';
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, TWEET_TEXT } from '../settings/config.js';
+
+const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(TWEET_TEXT)}`;
+const badgeMarkdown = `[![技術者倫理|遵守済み](${SITE_URL}/badge.svg)](${SITE_URL})`;
+const badgeHTML = `<a href="${SITE_URL}"><img src="${SITE_URL}/badge.svg" alt="技術者倫理|遵守済み" height="20"></a>`;
+---
+
+<BaseLayout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  url={SITE_URL}
+  ogImage={`${SITE_URL}/badge.svg`}
+>
+  <main>
+    <p class="eyebrow">Engineering Ethics</p>
+    <h1>技術者倫理を守ろう</h1>
+    <p class="lead">
+      ちょっと待って！その発言/その行為、<br class="br-md" />技術者倫理を守っていますか？
+    </p>
+    <ActionButtons tweetUrl={tweetUrl} siteUrl={SITE_URL} />
+    <BadgeSection siteUrl={SITE_URL} badgeMarkdown={badgeMarkdown} badgeHTML={badgeHTML} />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    color: var(--fg);
+  }
+
+  .lead {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+  }
+
+  .br-md {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .br-md {
+      display: inline;
+    }
+  }
+</style>

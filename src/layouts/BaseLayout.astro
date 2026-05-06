@@ -1,0 +1,111 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  ogImage: string;
+}
+
+const { title, description, url, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #ffffff;
+    --fg: #09090b;
+    --muted: #71717a;
+    --accent: #dc2626;
+    --border: #e4e4e7;
+    --btn-bg: #fafafa;
+    --btn-hover: #f4f4f5;
+    --code-bg: #f4f4f5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #09090b;
+      --fg: #fafafa;
+      --muted: #a1a1aa;
+      --accent: #ef4444;
+      --border: #27272a;
+      --btn-bg: #18181b;
+      --btn-hover: #27272a;
+      --code-bg: #18181b;
+    }
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    font-weight: 500;
+    background: var(--btn-bg);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.12s, box-shadow 0.12s;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .btn:hover {
+    background: var(--btn-hover);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+    box-shadow: none;
+  }
+</style>

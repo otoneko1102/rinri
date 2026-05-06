@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL, SITE_TITLE } from '../settings/config.js';
+---
+
+<BaseLayout
+  title={`404 — ${SITE_TITLE}`}
+  description="存在しないURLへのアクセスは技術者倫理に反します。"
+  url={SITE_URL}
+  ogImage={`${SITE_URL}/thumbnail.png`}
+>
+  <main>
+    <p class="code">404</p>
+    <h1>技術者倫理違反</h1>
+    <p class="lead">
+      存在しないURLへのアクセスは<br />
+      <strong>技術者倫理に反します。</strong>
+    </p>
+    <p class="sub">
+      ただちに正規のURLへ戻り、技術者倫理を守ってください。
+    </p>
+    <a href="/" class="btn">トップページへ戻る（倫理的な行動）</a>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .code {
+    font-size: clamp(4rem, 14vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+
+  .lead {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+  }
+
+  .sub {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+</style>

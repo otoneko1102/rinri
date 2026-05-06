@@ -1,0 +1,104 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  tweetUrl: string;
+  siteUrl: string;
+}
+
+const { tweetUrl, siteUrl } = Astro.props;
+---
+
+<div class="actions">
+  <div class="actions-row actions-row--top">
+    <a
+      href="https://www.google.com/search?q=%E6%8A%80%E8%A1%93%E8%80%85%E5%80%AB%E7%90%86"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-google"
+    >
+      <Icon name="logos:google-icon" width="16" height="16" aria-hidden="true" />
+      技術者倫理について学ぶ
+    </a>
+  </div>
+  <div class="actions-row">
+    <a
+      href={tweetUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-tweet"
+    >
+      <Icon name="simple-icons:x" width="14" height="14" aria-hidden="true" />
+      ポスト
+    </a>
+    <button id="copy-link" class="btn" data-url={siteUrl}>
+      <Icon name="lucide:link" width="15" height="15" aria-hidden="true" />
+      リンクをコピー
+    </button>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('copy-link') as HTMLButtonElement;
+  btn.addEventListener('click', () => {
+    const url = btn.dataset.url!;
+    navigator.clipboard.writeText(url).then(() => {
+      const label = btn.lastChild as Text;
+      const orig = label.textContent!;
+      label.textContent = ' コピーしました！';
+      btn.disabled = true;
+      setTimeout(() => { label.textContent = orig; btn.disabled = false; }, 2000);
+    });
+  });
+</script>
+
+<style>
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .btn-tweet {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  .btn-tweet:hover {
+    opacity: 0.85;
+    background: #000;
+  }
+
+  .btn-google {
+    background: #fff;
+    color: #3c4043;
+    border-color: #e0e0e0;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: box-shadow 0.12s, background 0.12s;
+  }
+
+  .btn-google:hover {
+    background: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-google {
+      background: #1c1c1e;
+      color: #e8eaed;
+      border-color: #38383a;
+      box-shadow: none;
+    }
+    .btn-google:hover {
+      background: #2c2c2e;
+    }
+  }
+</style>

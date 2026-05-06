@@ -1,0 +1,159 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  siteUrl: string;
+  badgeMarkdown: string;
+  badgeHTML: string;
+}
+
+const { siteUrl, badgeMarkdown, badgeHTML } = Astro.props;
+---
+
+<section class="badge-section">
+  <div class="badge-top">
+    <a href={siteUrl}>
+      <img src="/badge.svg" alt="技術者倫理|遵守済み" height="20" />
+    </a>
+    <div class="badge-copy-group">
+      <button class="btn btn-small" data-panel="panel-md">
+        <Icon name="lucide:file-text" width="13" height="13" aria-hidden="true" />
+        Markdown
+      </button>
+      <button class="btn btn-small" data-panel="panel-html">
+        <Icon name="lucide:code" width="13" height="13" aria-hidden="true" />
+        HTML
+      </button>
+    </div>
+  </div>
+
+  <div class="copy-panel" id="panel-md" hidden>
+    <code id="code-md" class="copy-code">{badgeMarkdown}</code>
+    <button class="copy-panel-btn" data-target="code-md" aria-label="Markdownをコピー">
+      <Icon name="lucide:copy" width="14" height="14" aria-hidden="true" />
+    </button>
+  </div>
+
+  <div class="copy-panel" id="panel-html" hidden>
+    <code id="code-html" class="copy-code">{badgeHTML}</code>
+    <button class="copy-panel-btn" data-target="code-html" aria-label="HTMLをコピー">
+      <Icon name="lucide:copy" width="14" height="14" aria-hidden="true" />
+    </button>
+  </div>
+</section>
+
+<script>
+  const toggleBtns = document.querySelectorAll<HTMLButtonElement>('[data-panel]');
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.panel!;
+      const targetPanel = document.getElementById(targetId);
+      const isOpen = !targetPanel!.hidden;
+
+      document.querySelectorAll<HTMLElement>('.copy-panel').forEach(p => {
+        p.hidden = true;
+      });
+      toggleBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+
+      if (!isOpen) {
+        targetPanel!.hidden = false;
+        btn.setAttribute('aria-pressed', 'true');
+      }
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.copy-panel-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target!;
+      const text = document.getElementById(targetId)!.textContent!;
+      navigator.clipboard.writeText(text).then(() => {
+        const origHTML = btn.innerHTML;
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
+      });
+    });
+  });
+</script>
+
+<style>
+  .badge-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem 1.1rem;
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .badge-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .badge-copy-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .btn-small {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+  }
+
+  .btn-small[aria-pressed='true'] {
+    background: var(--btn-hover);
+  }
+
+  .copy-panel[hidden] {
+    display: none;
+  }
+
+  .copy-panel {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .copy-code {
+    display: block;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.78rem;
+    padding: 0.55rem 0.75rem;
+    color: var(--fg);
+    white-space: nowrap;
+    overflow-x: auto;
+    flex: 1;
+    cursor: text;
+    user-select: all;
+    align-self: center;
+  }
+
+  .copy-panel-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.65rem;
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .copy-panel-btn:hover {
+    color: var(--fg);
+    background: var(--btn-hover);
+  }
+</style>
