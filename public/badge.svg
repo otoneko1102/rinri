@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="164" height="20" role="img" aria-label="技術者倫理: 遵守済み">
+  <title>技術者倫理: 遵守済み</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r">
+    <rect width="164" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="90" height="20" fill="#555"/>
+    <rect x="90" width="74" height="20" fill="#3fb950"/>
+    <rect width="164" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
+    <text x="450" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="690" lengthAdjust="spacing">技術者倫理</text>
+    <text x="450" y="140" transform="scale(.1)" textLength="690" lengthAdjust="spacing">技術者倫理</text>
+    <text x="1270" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="520" lengthAdjust="spacing">遵守済み</text>
+    <text x="1270" y="140" transform="scale(.1)" textLength="520" lengthAdjust="spacing">遵守済み</text>
+  </g>
+</svg>
