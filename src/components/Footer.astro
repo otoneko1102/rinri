@@ -39,15 +39,11 @@ import { DISCORD_URL, GITHUB_URL } from '../settings/config.js';
   }
 
   .license {
-    font-size: 0.7rem;
+    font-size: clamp(0.38rem, 1.8vw, 0.7rem);
     color: var(--muted);
     white-space: nowrap;
-  }
-
-  @media (max-width: 480px) {
-    .license {
-      font-size: clamp(0.45rem, 2.5vw, 0.7rem);
-    }
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .license a {
